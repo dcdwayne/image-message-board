@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>圖文留言板</title>
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+    <!-- 導覽列 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1>圖文留言板</h1>
+        </div>
+    </nav>
+
+    <main class="container">
+        <!-- 上傳區 -->
+        <section class="upload-section card">
+            <h2 class="section-title">發表一篇圖文</h2>
+            <form id="postForm">
+                <div class="form-group">
+                    <label for="textContent">文字內容</label>
+                    <input type="text" id="textContent" name="text" required placeholder="請輸入留言內容...">
+                </div>
+                <div class="form-group">
+                    <label for="imageFile">圖片檔案</label>
+                    <input type="file" id="imageFile" name="image" accept="image/*" required>
+                </div>
+                <button type="submit" class="submit-btn">送出</button>
+            </form>
+        </section>
+
+        <!-- 圖文呈現區 -->
+        <section class="feed-section">
+            <h2 class="section-title">最新留言</h2>
+            <div id="feedContainer" class="feed-container">
+                <!-- JS 會在這裡動態插入留言卡片 -->
+            </div>
+        </section>
+    </main>
+
+    <script src="static/js/main.js"></script>
+</body>
+</html>
