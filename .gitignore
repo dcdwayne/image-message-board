@@ -146,3 +146,8 @@ __pycache__
 
 # 環境變數與機密資訊
 .env
+
+# Ignore SSL certificates
+ssl/
+*.key
+*.crt

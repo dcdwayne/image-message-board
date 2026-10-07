@@ -15,11 +15,13 @@ services:
     # Nginx 負責對外開啟 80 Port
     ports:
       - "80:80"
+      - "443:443"  # <--- 加入這一行
     volumes:
       # 將剛剛寫好的 nginx.conf 掛載進 Nginx 容器內覆蓋預設設定
       - ./nginx.conf:/etc/nginx/nginx.conf:ro
       # 【新增】將本機的 static 資料夾，掛載到 Nginx 容器內供它直接讀取 (:ro 代表唯讀，保護檔案安全)
       - ./static:/usr/share/nginx/html/static:ro
+      - ./ssl:/etc/nginx/ssl   # <--- 新增這行，把本地的 ssl 資料夾掛載到容器內
     depends_on:
       - app
     restart: always
